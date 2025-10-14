@@ -1,2 +1,2 @@
-# Write pseudocode in the README.md file.
+# Write pseudocode 
 ## 
