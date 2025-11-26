@@ -5,7 +5,7 @@ public class Main {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    // constant
+    // constant example
     private static final int DEFAULT_WEIGHT = 10;
 
     public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class Main {
 
                 case 0:
                     System.out.println("Exiting. Goodbye!");
-                    GradeBook.printTotalAssignments(); // static method
+                    GradeBook.printTotalAssignments();
                     loop = false;
                     break;
 
@@ -43,14 +43,12 @@ public class Main {
         System.out.println("0. Exit");
         System.out.println("1. Check your current grade");
         System.out.println("2. Enter a new assignment grade");
-        System.out.println("-------------------------------------------------");
+        System.out.println("--------------------------------------------");
     }
 
     private static void handleAddAssignment(GradeBook gradeBook) {
         String name = getStringInput("Assignment name: ");
-
-        // Use a String method (trim + uppercase)
-        name = name.trim().toUpperCase();
+        name = name.trim().toUpperCase();  // uses String methods
 
         double grade = getDoubleInput("Assignment grade (pts): ");
         int weight = getIntInput("Assignment weight (pts): ");
@@ -68,14 +66,18 @@ public class Main {
     }
 
     private static void displayCurrentGrade(GradeBook gradeBook) {
+        if (gradeBook.hasNoAssignments()) {
+            System.out.println("Invalid operation. No grades have yet been entered.");
+            System.out.println("--------------------------------------------");
+            return;
+        }
+
         System.out.printf("Current grade: %.2f%% (%s)\n",
                 gradeBook.getWeightedGrade(),
                 gradeBook.getLetterGrade());
-
-        System.out.println("-------------------------------------------------");
+        System.out.println("--------------------------------------------");
     }
 
-    // Java library class: Random
     private static void displayRandomMessage() {
         String[] messages = {
                 "Nice work!",

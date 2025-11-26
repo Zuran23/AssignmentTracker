@@ -1,4 +1,6 @@
-
+/**
+ * Represents an assignment with a name, points, and weight.
+ */
 public class Assignment {
 
     private String name;

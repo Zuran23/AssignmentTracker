@@ -4,24 +4,29 @@ public class GradeBook {
     private Assignment[] assignments = new Assignment[100];
     private int count = 0;
 
-    // static variable
+    // Static variable
     public static int totalAssignmentsAdded = 0;
 
-    // static method
+    // Static method
     public static void printTotalAssignments() {
         System.out.println("Total assignments added: " + totalAssignmentsAdded);
     }
 
-    // Method overloading
+    // Adds assignment (main method)
     public void addAssignment(String name, double points, int weight) {
         assignments[count] = new Assignment(name, points, weight);
         count++;
         totalAssignmentsAdded++;
     }
 
-    // Overloaded version (default weight = 10)
+    // Overloaded method (default weight = 10)
     public void addAssignment(String name, double points) {
         addAssignment(name, points, 10);
+    }
+
+    // New method for checking if no assignments exist
+    public boolean hasNoAssignments() {
+        return count == 0;
     }
 
     public double getTotalPoints() {
@@ -43,15 +48,13 @@ public class GradeBook {
     public double getWeightedGrade() {
         if (count == 0) return 0;
 
-        // Math class method used
         double raw = (getTotalPoints() / getTotalWeight()) * 100;
-        return Math.round(raw * 100) / 100.0; // round to 2 decimals
+        return Math.round(raw * 100) / 100.0;
     }
 
     public String getLetterGrade() {
         double grade = getWeightedGrade();
 
-        // conditional operator
         return (grade >= 90) ? "A" :
                 (grade >= 80) ? "B" :
                         (grade >= 70) ? "C" :
