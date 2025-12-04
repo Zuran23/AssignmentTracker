@@ -33,7 +33,7 @@ public class Main {
 
                 default:
                     System.out.println("Invalid option. Try again.");
-                    System.out.println(" ");
+                    System.out.println("--------------------------------------------");
             }
         }
     }
