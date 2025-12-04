@@ -1,3 +1,4 @@
+//Group5
 public abstract class SchoolItem {
     protected String name;
 

@@ -1,11 +1,12 @@
+//Group5
 public class Assignment extends SchoolItem {
 
     private double points;
     private int weight;
 
     public Assignment(String name, double points, int weight) {
-        super(name); // uses super keyword
-        this.points = points; // this keyword
+        super(name);
+        this.points = points;
         this.weight = weight;
     }
 

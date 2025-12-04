@@ -1,3 +1,4 @@
+//Group5
 import java.util.Random;
 import java.util.Scanner;
 
@@ -48,7 +49,7 @@ public class Main {
 
     private static void handleAddAssignment(GradeBook gradeBook) {
         String name = getStringInput("Assignment name: ");
-        name = name.trim().toUpperCase();  // uses String methods
+        name = name.trim().toUpperCase();
 
         double grade = getDoubleInput("Assignment grade (pts): ");
         int weight = getIntInput("Assignment weight (pts): ");
