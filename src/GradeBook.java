@@ -4,27 +4,22 @@ public class GradeBook {
     private Assignment[] assignments = new Assignment[100];
     private int count = 0;
 
-    // Static variable
     public static int totalAssignmentsAdded = 0;
 
-    // Static method
     public static void printTotalAssignments() {
         System.out.println("Total assignments added: " + totalAssignmentsAdded);
     }
 
-    // Adds assignment (main method)
     public void addAssignment(String name, double points, int weight) {
         assignments[count] = new Assignment(name, points, weight);
         count++;
         totalAssignmentsAdded++;
     }
 
-    // Overloaded method (default weight = 10)
     public void addAssignment(String name, double points) {
         addAssignment(name, points, 10);
     }
 
-    // New method for checking if no assignments exist
     public boolean hasNoAssignments() {
         return count == 0;
     }

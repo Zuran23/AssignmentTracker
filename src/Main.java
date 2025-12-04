@@ -5,7 +5,6 @@ public class Main {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    // constant example
     private static final int DEFAULT_WEIGHT = 10;
 
     public static void main(String[] args) {
@@ -33,7 +32,8 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Invalid option. Try again.\n");
+                    System.out.println("Invalid option. Try again.");
+                    System.out.println(" ");
             }
         }
     }
@@ -72,9 +72,10 @@ public class Main {
             return;
         }
 
-        System.out.printf("Current grade: %.2f%% (%s)\n",
+        System.out.printf("Current grade: %.2f%% (%s)",
                 gradeBook.getWeightedGrade(),
                 gradeBook.getLetterGrade());
+        System.out.println(" ");
         System.out.println("--------------------------------------------");
     }
 
