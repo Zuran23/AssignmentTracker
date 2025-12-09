@@ -1,4 +1,8 @@
-Project Requirements: Assigment Checker
+Project Assignment Tracker
+Project Description: The Project is designed to track the user's grade in their class. If they have no grade, no results will be shown; it will use basic arithmetic to display student's numerical grade and display the letter for the class. 
+
+
+
 Pseudocode:
 
 START PROGRAM
@@ -7,38 +11,22 @@ CREATE GradeBook object gradeBook
 
 LOOP forever:
     DISPLAY menu options:
-        1. Add assignment
-        2. View assignments
-        3. View average
-        4. Exit
+       0. Exit
+       1. Display Grade
+       2. Add Assignment
 
-    READ userChoice
+Switch (Option == 0)
+The program will promptly end. 
+ 
+Switch (Option == 1)
+Call displaycurrentgradebook
+The program will display the grade that user has input in the system, if no changes were made
 
-    IF userChoice == 1:
-        PROMPT "Enter assignment name"
-        READ name
-        PROMPT "Enter grade"
-        READ grade
-        CREATE Assignment object with (name, grade)
-        CALL gradeBook.addAssignment(assignment)
 
-    ELSE IF userChoice == 2:
-        CALL gradeBook.displayAssignments()
+Switch (Option == 2) 
+If user chooses Option 2, the program will ask for the assignment, name, and weight. The user can add more points than the weight due to the possibility of extra credit.
 
-    ELSE IF userChoice == 3:
-        average = CALL gradeBook.calculateAverage()
-        DISPLAY average
 
-    ELSE IF userChoice == 4:
-        DISPLAY "Goodbye!"
-        BREAK loop
-
-    ELSE:
-        DISPLAY "Invalid option. Try again."
-
-END LOOP
-
-END PROGRAM
 
 
 JavaDocs were added to this project to clearly describe the purpose of each class, method, and important variable. These comments help explain how the program works and make the code easier for us and others to understand.
